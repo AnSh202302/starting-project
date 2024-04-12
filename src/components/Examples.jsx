@@ -13,25 +13,25 @@ function Examples() {
       <menu>
         <TapButton
           isSelected={selectedTopic === "components"}
-          onSelect={() => handleClick("components")}
+          onClick={() => handleClick("components")}
         >
           Components
         </TapButton>
         <TapButton
           isSelected={selectedTopic === "jsx"}
-          onSelect={() => handleClick("jsx")}
+          onClick={() => handleClick("jsx")}
         >
           JSX
         </TapButton>
         <TapButton
           isSelected={selectedTopic === "props"}
-          onSelect={() => handleClick("props")}
+          onClick={() => handleClick("props")}
         >
           Props
         </TapButton>
         <TapButton
           isSelected={selectedTopic === "state"}
-          onSelect={() => handleClick("state")}
+          onClick={() => handleClick("state")}
         >
           State
         </TapButton>
