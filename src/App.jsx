@@ -5,7 +5,7 @@ import TapButton from "./components/TapButton.jsx";
 import { CORE_CONCEPTS, EXAMPLES } from "./data";
 
 function App() {
-  const [selectedTopic, setSelectedTopik] = useState("components");
+  const [selectedTopic, setSelectedTopik] = useState();
   function handleClick(selectedButton) {
     setSelectedTopik(selectedButton);
   }
@@ -32,13 +32,17 @@ function App() {
             <TapButton onSelect={() => handleClick("props")}>Props</TapButton>
             <TapButton onSelect={() => handleClick("state")}>State</TapButton>
           </menu>
-          <div id="tab-content">
-            <h3>{EXAMPLES[selectedTopic].title}</h3>
-            <p>{EXAMPLES[selectedTopic].description}</p>
-            <pre>
-              <code>{EXAMPLES[selectedTopic].code}</code>
-            </pre>
-          </div>
+          {!selectedTopic ? (
+            <p>Please select a topic.</p>
+          ) : (
+            <div id="tab-content">
+              <h3>{EXAMPLES[selectedTopic].title}</h3>
+              <p>{EXAMPLES[selectedTopic].description}</p>
+              <pre>
+                <code>{EXAMPLES[selectedTopic].code}</code>
+              </pre>
+            </div>
+          )}
         </section>
       </main>
     </div>
