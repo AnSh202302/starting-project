@@ -25,12 +25,30 @@ function App() {
         <section id="examples">
           <h2>Examples</h2>
           <menu>
-            <TapButton onSelect={() => handleClick("components")}>
+            <TapButton
+              isSelected={selectedTopic === "components"}
+              onSelect={() => handleClick("components")}
+            >
               Components
             </TapButton>
-            <TapButton onSelect={() => handleClick("jsx")}>JSX</TapButton>
-            <TapButton onSelect={() => handleClick("props")}>Props</TapButton>
-            <TapButton onSelect={() => handleClick("state")}>State</TapButton>
+            <TapButton
+              isSelected={selectedTopic === "jsx"}
+              onSelect={() => handleClick("jsx")}
+            >
+              JSX
+            </TapButton>
+            <TapButton
+              isSelected={selectedTopic === "props"}
+              onSelect={() => handleClick("props")}
+            >
+              Props
+            </TapButton>
+            <TapButton
+              isSelected={selectedTopic === "state"}
+              onSelect={() => handleClick("state")}
+            >
+              State
+            </TapButton>
           </menu>
           {!selectedTopic ? (
             <p>Please select a topic.</p>
